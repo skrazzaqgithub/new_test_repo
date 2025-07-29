@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // Explicitly specify the branch you want to checkout
                 git branch: 'shaik', url: 'https://github.com/skrazzaqgithub/new_test_repo.git'
             }
         }
@@ -24,3 +23,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            steps {
+                echo 'Deploying application...'
+            }
+        }
+    }
+}
