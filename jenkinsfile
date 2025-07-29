@@ -1,20 +1,15 @@
 pipeline {
     agent any
     stages {
-<<<<<<< HEAD
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
                 git 'https://github.com/skrazzaqgithub/new_test_repo.git'
             }
-=======
-        stage('Checkout Code') {
-            steps { git 'https://github.com/skrazzaqgithub/new_test_repo.git' }
->>>>>>> origin/shaik
         }
         stage('Install Dependencies') {
             steps {
                 sh 'pip install --upgrade pip'
-                sh 'pip install --user -r requirements.txt'  // use --user, as system site-packages may not be writable
+                sh 'pip install --user -r requirements.txt'
             }
         }
         stage('Lint') {
